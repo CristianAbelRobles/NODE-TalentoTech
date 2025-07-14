@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import {db} from "./data.js"
-import { collection, getDocs, doc, getDoc, addDoc, deleteDoc, setDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, addDoc, deleteDoc, updateDoc } from "firebase/firestore";
 
 const __dirname = import.meta.dirname;
 
@@ -44,7 +44,7 @@ export const createProduct = async (data) => {
 
 export const updateProduct = async (id, data) => {
   try {
-    const docRef = doc(db, "products", id);
+    const docRef = doc(productsCollection, id);
     const snapshot = await getDoc(docRef);
 
     if (!snapshot.exists()) {

@@ -27,7 +27,6 @@ proyecto/
 │   ├── models/
 │   │   └── products.model.js (opcional)
 │   └── data.js
-├── products.json (base de datos local, opcional)
 ├── .env
 ├── app.js
 └── README.md

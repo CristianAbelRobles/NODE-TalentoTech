@@ -69,9 +69,9 @@ export const deleteProduct = async (req, res) => {
 export const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, price, categories } = req.body;
+    const { name, price, category } = req.body;
 
-    const updatedProduct = await model.updateProduct(id, { name, price, categories });
+    const updatedProduct = await model.updateProduct(id, { name, price, category });
 
     if (!updatedProduct) {
       return res.status(404).json({ error: "Producto no encontrado" });
