@@ -20,7 +20,7 @@ app.use(cors())
 app.use("/api", productsRoutes)
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hola Mundo!</h1>')
+  res.send('<h1>Proyecto Final Node.js - Cristian Robles</h1>')
 })
 
 const PORT = process.env.PORT || 3001;
