@@ -66,12 +66,15 @@ export const deleteProduct = async (id) => {
     const snapshot = await getDoc(productRef);
 
     if (!snapshot.exists()) {
-      return false;
+      return null;
     }
 
+    const deletedData = { id: snapshot.id, ...snapshot.data() };
     await deleteDoc(productRef);
-    return true;
+
+    return deletedData;
   } catch (error) {
-    console.error(error);
+    console.error("Error en deleteProduct:", error);
+    throw error;
   }
 };

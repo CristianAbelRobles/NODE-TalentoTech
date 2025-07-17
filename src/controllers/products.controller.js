@@ -53,13 +53,19 @@ export const createProduct = async (req, res) => {
 export const deleteProduct = async (req, res) => {
   try {
     const productId = req.params.id;
-    const product = await model.deleteProduct(productId);
+    const deletedProduct = await model.deleteProduct(productId);
 
-    if (!product) {
+    if (!deletedProduct) {
       return res.status(404).json({ error: "Producto no encontrado" });
     }
 
-    res.status(204).send();
+    res.status(200).json({
+      message: "Producto eliminado correctamente",
+      product: {
+        id: deletedProduct.id,
+        name: deletedProduct.name || deletedProduct.title || "(sin nombre)"
+      }
+    });
   } catch (error) {
     console.error("Error al eliminar producto:", error);
     res.status(500).json({ error: "Error interno del servidor" });

@@ -145,7 +145,7 @@ MIT © 2025 — Proyecto educativo desarrollado para el curso de Node.js - Talen
 
 Podrás acceder al API desde el siguiente enlace:
 
-🔗 [https://.vercel.app](https://.vercel.app)
+🔗 [https://api-nodejs-silk.vercel.app/](https://api-nodejs-silk.vercel.app/)
 
 
 ---
