@@ -13,8 +13,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// METODO POST
-
 app.use(express.json()) // para poder leer el body de la req
 app.use(cors())
 
@@ -22,9 +20,8 @@ app.use("/api", productsRoutes)
 app.use("/api/auth", authRouter);
 
 app.get('/', (req, res) => {
-  res.send('<h1>Proyecto Final Node.js - Cristian Robles</h1>')
+  res.send('<h1>Proyecto Node.js - Cristian Robles - Talento Tech</h1>')
 })
-
 
 const PORT = process.env.PORT || 3001;
 

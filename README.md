@@ -11,6 +11,7 @@ Este es un proyecto backend desarrollado con **Node.js**, **Express** y **Fireba
 - [Firebase Firestore](https://firebase.google.com/docs/firestore)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [CORS](https://www.npmjs.com/package/cors)
+- [jwt](https://www.npmjs.com/package/jsonwebtoken)
 - `fs` y `path` para manejo de archivos locales
 
 ---
@@ -21,11 +22,18 @@ Este es un proyecto backend desarrollado con **Node.js**, **Express** y **Fireba
 proyecto/
 ├── src/
 │   ├── controllers/
+│   │   ├── auth.controller.js
 │   │   └── products.controller.js
-│   ├── routes/
-│   │   └── products.routes.js
+│   ├── middlewares/
+│   │   └── auth.middleware.js
 │   ├── models/
-│   │   └── products.model.js (opcional)
+│   │   ├── data.js
+│   │   └── products.model.js
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   └── products.routes.js
+│   ├── services/
+│   │   └── products.service.js
 │   └── data.js
 ├── .env
 ├── app.js
@@ -59,6 +67,7 @@ FIREBASE_PROJECT_ID=...
 FIREBASE_STORAGE_BUCKET=...
 FIREBASE_MESSAGING_SENDER_ID=...
 FIREBASE_APP_ID=...
+JWT_SECRET=...
 ```
 
 > ⚠️ Datos obtenidos desde tu proyecto en Firebase.
@@ -145,7 +154,7 @@ MIT © 2025 — Proyecto educativo desarrollado para el curso de Node.js - Talen
 
 Podrás acceder al API desde el siguiente enlace:
 
-🔗 [https://api-nodejs-silk.vercel.app/](https://api-nodejs-silk.vercel.app/)
+🔗 [http://api-nodejs-silk.vercel.app/api/products](http://api-nodejs-silk.vercel.app/api/products)
 
 
 ---
